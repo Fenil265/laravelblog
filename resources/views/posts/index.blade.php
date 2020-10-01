@@ -3,7 +3,7 @@
 
 @section('content')
 
-@foreach ($posts as $post)
+@foreach ($posts ?? '' as $post)
     @include('partials.summary')
 @endforeach
 
