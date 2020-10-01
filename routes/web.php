@@ -27,12 +27,4 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/', 'App\Http\Controllers\HomeController@index');
 
-// if (Auth::check())
-// {
-//     return 'fenil';
-//     Route::get('/', 'App\Http\Controllers\PostController@index');
-// } else {
-//     Route::get('/', 'App\Http\Controllers\HomeController@index');
-// }
-
 Route::resource('posts', 'App\Http\Controllers\PostController');
