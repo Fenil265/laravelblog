@@ -16,10 +16,11 @@ class PostController extends Controller
     public function index()
     {
         // Get all Posts, ordered by the newest first
-        // $posts = Post::latest()->get();
+        $posts = Post::latest()->get(); 
 
         // Pass Post Collection to view
-        return view('auth.login');
+        return view('posts.index', compact('posts'));
+        // return view('auth.login');
     }
 
     /**
@@ -102,7 +103,7 @@ class PostController extends Controller
         $post->update($validated);
 
         // Redirect the user to the created post woth an updated notification
-        return redirect(route('posts.index', [$post->slug]))->with('notification', 'Post updated!');
+        return redirect(route('posts.show', [$post->slug]))->with('notification', 'Post updated!');
     }
 
     /**

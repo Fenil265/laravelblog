@@ -9,27 +9,21 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css"
     />
+
+    <style>
+      .content{
+        padding: 40px;
+        background: floralwhite;
+        box-shadow: 0 0px 10px #ddd;
+        margin: 50px 0;
+      }
+      </style>
+
   </head>
 
   <body>
     <nav class="navbar" role="navigation" aria-label="main navigation">
-      <div class="navbar-brand">
-        <a href="{{ route('posts.index') }}" class="navbar-item">
-          <img src="{{ asset('img/logo.svg') }}" width="112" height="28" />
-        </a>
-        <a
-          role="button"
-          class="navbar-burger"
-          aria-label="menu"
-          aria-expanded="false"
-          data-target="navMenu"
-        >
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </a>
-      </div>
-      <div id="navMenu" class="navbar-menu">
+      <div id="navMenu" class="navbar-menu container">
         <div class="navbar-start">
           <a href="{{ route('posts.index') }}" class="navbar-item">
             All Posts
@@ -50,7 +44,7 @@
     <section class="section">
       <div class="container">
         <div class="columns is-centered">
-          <div class="column is-8">
+          <div class="column is-10">
             @if (session('notification'))
             <div class="notification is-primary">
               {{ session('notification') }}

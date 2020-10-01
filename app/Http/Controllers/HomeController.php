@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
+use Illuminate\Support\Facades\Route;
 
 class HomeController extends Controller
 {
@@ -25,7 +26,12 @@ class HomeController extends Controller
     public function index()
     {
         // return view('home');
-        $posts = Post::latest()->get();
-        return view('posts.index', compact('posts'));
+        
+        if (Route::has('login')) {
+            $posts = Post::latest()->get();
+            return view('posts.index', compact('posts'));
+        } else {
+            return view('auth.login');
+        }
     }
 }
