@@ -2,7 +2,8 @@
   <a href="{{ route('posts.show', [$post->slug]) }}">
     <h1 class="title">{{ $post->title }}</h1>
   </a>
-  <p><b>Posted:</b> {{ $post->created_at->diffForHumans() }}</p>
+{{--  <p><b>Posted:</b> {{ $post->created_at->diffForHumans() }}</p>--}}
+    <p><b>Posted:</b> {{ \Carbon\Carbon::parse($post->created_at)->diffForHumans() }} ({{$post->created_at}})</p>
   <p><b>Category:</b> {{ $post->category }}</p>
   <p>{!! nl2br(e($post->content)) !!}</p>
 

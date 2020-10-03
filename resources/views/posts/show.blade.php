@@ -1,5 +1,6 @@
 @include('layouts.app')
 @section('title', $post->title)
+
 @extends('layout')
 
 @section('content')
